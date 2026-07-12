@@ -9,7 +9,6 @@ public class Main {
         System.out.println("Задача 1");
 
 
-
         int[] inputArray1 = {1500, 3200, 800, 2750, 1900};
 
         int sum = 0;
@@ -62,13 +61,12 @@ public class Main {
         System.out.println("Задача 2");
 
         int[] inputArray2 = {50000, 75000, 30000, 90000, 45000};
-
-
         double[] outputArray2 = new double[inputArray2.length];
 
-
-        for (int i = 0; i < inputArray2.length; i++) {
-            outputArray2[i] = inputArray2[i] * 0.13;
+        int index = 0;
+        for (int value : inputArray2) {
+            outputArray2[index] = value * 0.13;
+            index++;
         }
 
         System.out.print("inputArray2: ");
@@ -79,7 +77,6 @@ public class Main {
 
         System.out.print("outputArray2: ");
         for (double value : outputArray2) {
-
             if (value == (int) value) {
                 System.out.print((int) value + " ");
             } else {
@@ -87,15 +84,19 @@ public class Main {
             }
         }
         System.out.println();
+
         // Задача 3
         System.out.println("\n");
         System.out.println("Задача 3");
 
         int[] inputArray3 = {4500, 5200, 3800, 6100, 5000};
         boolean[] outputArray3 = new boolean[inputArray3.length];
-        for (int i = 0; i < inputArray3.length; i++) {
-            outputArray3[i] = inputArray3[i] > 5000;
+        int index1 = 0;
+        for (int value : inputArray3) {
+            outputArray3[index1] = value > 5000;
+            index1++;
         }
+
         System.out.print("inputArray3: [");
         boolean first = true;
         for (int value : inputArray3) {
@@ -106,6 +107,7 @@ public class Main {
             first = false;
         }
         System.out.println("]");
+
         System.out.print("outputArray3: [");
         first = true;
         for (boolean value : outputArray3) {
@@ -116,27 +118,26 @@ public class Main {
             first = false;
         }
         System.out.println("]");
+
         // Задача 4
         System.out.println("\n");
         System.out.println("Задача 4");
 
 
+        int[] inputArray4 = {1500, 2300, 400, 1800, -900};
+        boolean[] outputArray4 = new boolean[1];
 
-        int[] inputArray4 = {1500, 2300, -400, 1800, 900};
-
-        boolean outputArray4 = true;
-
+        outputArray4[0] = true;
 
         for (int balance : inputArray4) {
             if (balance < 0) {
-                outputArray4 = false;
+                outputArray4[0] = false;
                 break;
             }
         }
 
-
         System.out.print("inputArray4: [");
-        for (int i = 0; i < inputArray4.length; i++) {
+        for (int i = 0; i < inputArray4.length; i++) { // исправлена опечатка в условии цикла
             System.out.print(inputArray4[i]);
             if (i < inputArray4.length - 1) {
                 System.out.print(", ");
@@ -144,7 +145,8 @@ public class Main {
         }
         System.out.println("]");
 
-        System.out.println("outputArray4: " + outputArray4);
+        System.out.println("outputArray4: " + outputArray4[0]); // выводим элемент массива
+
         // Задача 5
         System.out.println("\n");
         System.out.println("Задача 5");
@@ -152,15 +154,13 @@ public class Main {
         int[] inputArray5 = {15000, -3000, 8000, 0, 12000};
 
 
-        int outputArray5 = 0;
-
+        int[] outputArray5 = new int[1];
 
         for (int profit : inputArray5) {
             if (profit > 0) {
-                outputArray5++;
+                outputArray5[0]++;
             }
         }
-
 
         System.out.print("inputArray5: [");
         for (int i = 0; i < inputArray5.length; i++) {
@@ -171,7 +171,7 @@ public class Main {
         }
         System.out.println("]");
 
-        System.out.println("outputArray5 (количество рентабельных месяцев): " + outputArray5);
+        System.out.println("outputArray5 (количество рентабельных месяцев): " + outputArray5[0]);
     }
 }
 
